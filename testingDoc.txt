@@ -1,0 +1,40 @@
+Light differnce (window circins open, white board, black mouse pad)
+  1:
+    left-without == 2
+    right-without == 2
+    left-with == 6
+    right-with == 6
+  2:
+    left-without == 1
+    right-without == 1
+    left-with == 4
+    right-with == 4
+average:
+  left-without == 1
+  right-without == 1
+  left-with == 5
+  right-with == 5
+differnce:
+  left == 4
+  right == 4
+
+
+light differnce (phone light over top)
+  1:
+    left-without == 18
+    right-without == 18
+    left-with == 54
+    right-with == 60
+  2:
+    left-without == 18
+    right-without == 18
+    left-with == 55
+    right-with == 60
+average:
+  left-without == 18
+  right-without == 18
+  left-with == 55
+  right-with == 60
+differnce:
+  left == 37
+  right == 42
