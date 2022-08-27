@@ -1,7 +1,8 @@
 main:
 readadc b.2, b2 ;left hand
 readadc b.1, b1 ;right hand
-;debug
+debug
+if b2 < 18 and b1 < 18 then s
 if b2 < 18 then right
 if b1 < 18 then left
 
@@ -9,7 +10,10 @@ goto f
 
 goto main
 
-
+s:
+low c.0
+low b.5
+goto main
 
 f:
 high c.0

@@ -1,9 +1,6 @@
 
-Receiver:
-Irin C.3,b1
-debug
-
-goto Receiver
+high b.5
+high c.0
 
 ;if b1=10 then Straight
 ;if b1=20 then Left
