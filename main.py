@@ -9,18 +9,6 @@ led.high()
 
 #leftMotor = machine.Pin(16, machine.Pin.OUT) # bottom pin
 class motor:
-    def forward(this):
-        this.posTrans2.low()
-        this.negTrans2.low()
-        this.posTrans1.high()
-        this.negTrans1.high()
-
-    def backwards(this):
-        this.posTrans1.low()
-        this.negTrans1.low()
-        this.negTrans2.high()
-        this.posTrans2.high()
-
     def __init__(this, posTrans1, posTrans2, negTrans1, negTrans2):
         this.posTrans1 = machine.Pin(posTrans1, machine.Pin.OUT)
         this.posTrans2 = machine.Pin(posTrans2, machine.Pin.OUT)
@@ -29,9 +17,17 @@ class motor:
 
 
 
-        
-
-
+def foward(Motor):
+    Motor.posTrans2.low()
+    Motor.negTrans2.low()
+    Motor.posTrans1.high()
+    Motor.negTrans1.high()
+    
+def backward(Motor):
+    Motor.posTrans1.low()
+    Motor.negTrans1.low()
+    Motor.negTrans2.high()
+    Motor.posTrans2.high()
 
 
 
@@ -57,20 +53,21 @@ while True:
     utime.sleep(0.2)
 
     if(rightReading > 6000 and leftReading > 6000):
-        leftMotor.forward()
-        rightMotor.forward()
+        foward(leftMotor)
+        foward(rightMotor)
+
         print('forward')
     elif(rightReading < 6000 and leftReading < 6000):
-        leftMotor.backwards()
-        rightMotor.backwards()
+        backward(leftMotor)
+        backward(rightMotor)
         print('backwards')
     elif(rightReading < 6000):
-        leftMotor.forward()
-        rightMotor.backwards()
+        foward(leftMotor)
+        backward(rightMotor)
         print('right')
     elif(leftReading < 6000):
-        leftMotor.backwards()
-        rightMotor.forward()
+        backward(leftMotor)
+        foward(rightMotor)
         print('left')
     
 
